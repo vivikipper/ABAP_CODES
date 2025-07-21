@@ -1,7 +1,9 @@
 *&---------------------------------------------------------------------*
 *& Report ZEMPLOYEE_LIST
 *&---------------------------------------------------------------------*
-*&
+*Description: Employee table list
+*Author: Vivi Kipper
+*Created on: 19.07.2025
 *&---------------------------------------------------------------------*
 REPORT zemployee_list LINE-SIZE 132.
 
@@ -39,4 +41,11 @@ SELECT * FROM zemployees.        " Basic Select Loop with individual fields
   WRITE zemployees-forename.
   WRITE zemployees-dob.
   ULINE.
+ENDSELECT.
+
+SKIP 2.
+SELECT * FROM zemployees.        " Chain statements
+  WRITE: / zemployees-surname,
+           zemployees-forename,
+           zemployees-dob.
 ENDSELECT.
